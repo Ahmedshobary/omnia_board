@@ -138,9 +138,7 @@
 </div>
 
 <script>
-/* ---------------- data ---------------- */
 const TASKS = [
-  /* PHASE 1 — website fixes */
   {id:1, p:1, c:"crit", w:"client", blocked:true,
    en:"Contact page phone numbers are fake placeholder links",
    tr:"İletişim sayfası telefon numaraları hatalı bağlantı içeriyor"},
@@ -196,10 +194,9 @@ const TASKS = [
    en:'Outdated "© 2020" copyright',
    tr:'Güncel olmayan telif hakkı yılı ("© 2020")'},
 
-  /* PHASE 2 — dollar-pegged pricing system */
   {id:19, p:2, c:"sys", w:"client", blocked:true,
-   en:"Confirm the USD anchor price for each product with the client",
-   tr:"Her ürün için dolar bazlı fiyatın müşteri ile onaylanması"},
+   en:"Confirm the USD anchor price for each product",
+   tr:"Her ürün için dolar bazlı fiyatın onaylanması"},
   {id:20, p:2, c:"sys", w:"dev",
    en:"Set up Shopify metafields to store each product's USD price",
    tr:"Ürün dolar fiyatı için Shopify metafield yapısının kurulması"},
@@ -283,7 +280,6 @@ const KEY  = "omnia_project_board_v2";
 
 let state={}, filter="all", phase=0, lang="en";
 
-/* --------- storage: works both inside Claude and when hosted (Vercel) --------- */
 const store = {
   async get(k){
     try{ if(window.storage){ const r=await window.storage.get(k); return r&&r.value?r.value:null; } }catch(e){}
